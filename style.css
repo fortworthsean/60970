@@ -1,6 +1,6 @@
 nav{
     width: 100%;
-    background-color: #212884;
+    background-color: #1a2c3e;
     color: white;
     height: 10vh;
     display: flex;
@@ -25,21 +25,21 @@ nav li {
 }
 
 nav a:link{
-    color: whitesmoke;
+    color: #98aacc;
     text-decoration: none;
 }
 nav a:hover{
-    color: crimson;
+    color: #e8d090;
     text-decoration: underline;
 }
 nav a:visited{
-    color: whitesmoke;
+    color: #98aacc;
     text-decoration: none;
 }
 
 footer{
     width: 100%;
-    background-color: #212884;
+    background-color: #1a2c3e;
     color: white;
     height: 10vh;
     display: flex;
@@ -68,7 +68,7 @@ footer a:link{
     text-decoration: none;
 }
 footer a:hover{
-    color: crimson;
+    color: #e8d090;
     text-decoration: underline;
 }
 
@@ -78,7 +78,7 @@ footer a:hover{
     /* Height = 70% of viewport height (responsive) */
     height: 70vh;
     /* Fallback color if image fails to load */
-    background-color: #212884;
+    background-color: #1a2c3e;
     /* Multiple backgrounds: gradient first, then image */
     background-image: 
         /* Linear gradient overlay */
@@ -91,7 +91,7 @@ footer a:hover{
         ),
         /* Background image (rendered behind gradient) */
        /* Background image path - relative to CSS file */
-    url('images/Web\ Banner.png');
+    url('images/Web\ Banner\ Scenic.jpg');
     /* Scale image to cover entire container, may crop */
     background-size: cover;
     /* Center the background image */
@@ -130,7 +130,7 @@ footer a:hover{
     margin: 0 0 10px 0;
     /* Text shadow: horizontal vertical blur color */
     /* Creates depth and improves readability over image */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .banner-title {
@@ -151,11 +151,11 @@ footer a:hover{
 }
 
 h1 {
-    color: #212884;
+    color: #1a2c3e;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h2 {
-    color: #212884;
+    color: #1a2c3e;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
 }
@@ -187,7 +187,7 @@ margin-bottom: 5%;}
     width: 100%;
     max-width: 800px;
     margin: 1rem 0;
-    border: 2px solid #ddd;
+    border: 2px solid #a08dae;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -195,25 +195,25 @@ margin-bottom: 5%;}
 /* Image captions */
 .image-caption {
     font-style: italic;
-    color: #666;
+    color: #a08dae;
     text-align: center;
     margin-top: 0.5rem;
     font-size: 0.9em;
 }
 /* Improve link styling */
 a {
-    color: #212884;
+    color: #e8d090;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #212884;
+    color: #1a2c3e;
     text-decoration: underline;
 }
 
 /* Focus states for accessibility */
 a:focus {
-    outline: 2px solid #212884;
+    outline: 2px solid #1a2c3e;
     outline-offset: 2px;
 }
