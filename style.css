@@ -32,6 +32,11 @@ nav a:hover{
     color: crimson;
     text-decoration: underline;
 }
+nav a:visited{
+    color: floralwhite;
+    text-decoration: none;
+}
+
 footer{
     width: 100%;
     background-color: #212884;
@@ -40,6 +45,7 @@ footer{
     display: flex;
     align-items: center;
     padding-left: 10%;
+    box-sizing: border-box;
 
 }
 footer ul {
@@ -73,8 +79,9 @@ footer a:hover{
     height: 70vh;
     /* Fallback color if image fails to load */
     background-color: #212884;
-
-     /* Linear gradient overlay */
+    /* Multiple backgrounds: gradient first, then image */
+    background-image: 
+        /* Linear gradient overlay */
         linear-gradient(
             to right,                    /* Direction: left to right */
             transparent 0%,              /* Start: fully transparent */
@@ -83,9 +90,8 @@ footer a:hover{
             rgba(0, 0, 0, 0.9) 100%     /* End: 90% opacity black */
         ),
         /* Background image (rendered behind gradient) */
-
-    /* Background image path - relative to CSS file */
-    background-image: url('images/Web\ Banner.png');
+       /* Background image path - relative to CSS file */
+    url('images/Web\ Banner.png');
     /* Scale image to cover entire container, may crop */
     background-size: cover;
     /* Center the background image */
