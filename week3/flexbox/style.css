@@ -12,26 +12,26 @@ body {
 }
 
 .header {
-    background-color: #7B4397;
+    background-color: #5c4a3a;
     height: 5em;
     margin-bottom: 20px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #f5f0e6;
     font-weight: bold;
 }
 
 .hero {
-    background-color: #2E86AB;
+    background-color: #d1bba2;
     height: 10em;
     margin-bottom: 20px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #5c4a3a;
     font-weight: bold;
 }
 
@@ -42,13 +42,13 @@ body {
 }
 
 .card {
-    background-color: #F18F01;
+    background-color: #f5f0e6;
     height: 80px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #5c4a3a;
     font-weight: bold;
 }
 

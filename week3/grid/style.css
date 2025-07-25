@@ -11,10 +11,10 @@
   text-align: center;
 }
 
-.header { background-color: #7B4397; color: white; }
-.hero { background-color: #2E86AB; color: white; }
-.features div { background-color: #F18F01; color: white; }
-.gallery div { background-color: #ddd; }
+.header { background-color: #5c4a3a; color: #f5f0e6; }
+.hero { background-color: #d1bba2; color: #5c4a3a; }
+.features div { background-color: #F5f0e6; color: #5c4838; }
+.gallery div { background-color: #f5f0e6; color: #5c4a3a }
 
 .features {
   display: grid;
