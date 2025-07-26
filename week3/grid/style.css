@@ -1,3 +1,57 @@
+/* Add to the top of your CSS file */
+:root {
+  --font-size-sm: clamp(0.8rem, 1.5vw, 0.9rem);
+  --font-size-base: clamp(1rem, 2vw, 1.125rem);
+  --font-size-lg: clamp(1.25rem, 3vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 4vw, 2rem);
+  --font-size-xxl: clamp(2rem, 6vw, 3rem);
+  --font-size-hero: clamp(2.5rem, 8vw, 4rem);
+  
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.7;
+}
+
+/* Heading Styles */
+h1, .h1 {
+  font-size: var(--font-size-hero);
+  line-height: var(--line-height-tight);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2, .h2 {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-tight);
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+}
+
+h3, .h3 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-normal);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Body Text */
+p, .body-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  margin-bottom: 1.5rem;
+  max-width: 65ch; /* Optimal reading width */
+}
+
+.lead-text {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-loose);
+  font-weight: 300;
+}
+
+.small-text {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
 /* Base mobile-first layout */
 .grid-container {
   display: grid;
@@ -38,116 +92,5 @@
 
   .gallery {
     grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Mobile-first base styles */
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 1rem;
-  background: transparent;
-  box-shadow: none;
-}
-
-.logo-text {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  text-decoration: none;
-}
-
-/* Mobile navigation menu - starts hidden */
-.nav-menu {
-  display: flex;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  flex-direction: column;
-  background: rgba(123, 67, 151, 0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.nav-menu a {
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  transition: color 0.3s ease;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.nav-menu a:hover {
-  color: #f0f0f0;
-  background: rgba(255,255,255,0.1);
-}
-
-/* Mobile menu toggle */
-.menu-toggle {
-  display: none;
-}
-
-.menu-toggle-label {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.menu-toggle-label span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 3px 0;
-  transition: 0.3s;
-}
-
-/* Show menu when toggle is checked */
-.menu-toggle:checked + .menu-toggle-label + .nav-menu {
-  max-height: 300px;
-}
-
-/* Tablet and larger screens - enhance the mobile base */
-@media (min-width: 768px) {
-  .main-nav {
-    padding: 1rem 2rem;
-  }
-  
-  .nav-menu {
-    position: static;
-    flex-direction: row;
-    width: auto;
-    background: transparent;
-    box-shadow: none;
-    max-height: none;
-    overflow: visible;
-    gap: 2rem;
-  }
-  
-  .nav-menu a {
-    padding: 0;
-    border-bottom: none;
-    color: white;
-  }
-  
-  .nav-menu a:hover {
-    background: transparent;
-    color: #4f6b4b;
-  }
-  
-  .menu-toggle-label {
-    display: none;
   }
 }
