@@ -57,7 +57,7 @@ a:focus {
 
 
 main {
-    padding: 20px; /* Less padding on mobile */
+    padding: 0; /* Less padding on mobile */
 }
 h1 {
     color: #f5f0e6;
@@ -100,14 +100,15 @@ img {
 /* Image styling for analysis screenshots */
 .analysis-image {
     width: 100%;
-    max-width: 800px;
-    margin: 1rem 0;
-    border: 2px solid #4F6B4B;
+    max-width: 100%;
+    margin: 1em 0;
+    border: .1em solid #4F6B4B;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: center;
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
+    
 }
 
 /* Image captions */
@@ -117,6 +118,7 @@ img {
     text-align: center;
     margin-top: 0.5rem;
     font-size: 0.9em;
+    padding: .0em;
 }
 
 .hero {
@@ -273,6 +275,13 @@ footer a:hover {
         flex: 1; /* Distribute space equally among cards */
     }
 }
+
+    .card-link {
+        flex: 1; /* Distributes space equally among cards */
+        min-width: 200px; /* Optional: Set a minimum width for cards to prevent them from becoming too small on wider screens, adjust as needed */
+        /* If you have many cards, consider adding max-width or using flex-basis */
+    }
+
 
 /* Desktop styles (1024px and up) */
 @media (min-width: 1024px) {
