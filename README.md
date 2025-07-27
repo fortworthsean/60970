@@ -18,6 +18,7 @@ Design Elements:
 
 Push Buttons:
 - My pictures are awful and the buttons are not matching in size becuase my images are different sizes, but I have spent countless hours on this and need to move on until next week.
+- I still have a weird blue underline in my buttons, and I cannot seem to fix it. I am lost on this at the moment.
 - This is my greatest concern on this design. I decided to make them card "buttons" after some research. It took a lot of trial and error here but I liked how it looked before I added in the images. 
 - I made them 100px height to have them a bit more "boxy" for mobile display, and kept the rounded edges for visual appeal.
 - The image background adds visual impact and contextual clues to the reader. 
