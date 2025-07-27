@@ -8,13 +8,16 @@
     box-sizing: border-boxfle;
 }
 
-body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+p, body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size: 1em;
     margin: 0;
     background-color: #f5f5f5;
-    padding: 20px;
-    background-color: #f5f5f5;
+    padding: 10px;
 }
+
+p2, body {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 1em;}
 
 header {
     background-color: #5c4a3a;
@@ -28,14 +31,11 @@ header {
     justify-content: center;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
     
 }
 
-h1 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px; /* Mobile size as default */
-    margin: 0 0 15px 0;
-}
+
 
 nav ul {
     list-style: none;
@@ -98,6 +98,7 @@ img {
     color: #f5f0e6;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
      /* Scale image to cover entire container, may crop */
     background-size: cover;
     /* Center the background image */
@@ -114,6 +115,33 @@ img {
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.card-button {
+  background-color: #f5f0e6;
+  height: 200px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5c4a3a;
+  font-weight: bold;width: 100%; /* Adjust as needed */
+  border: none;
+  background-size: cover; /* Cover the entire button area */
+  background-position: center; /* Center the image */
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease-in-out; /* For push effect */
+}
+
+.card-button:hover {
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+.card-button:active {
+  transform: scale(0.95); /* Push effect on click */
 }
 
 .card {
@@ -144,7 +172,7 @@ footer{
 }
 footer ul {
 list-style-type: none;
-padding: 0;
+padding: 20px;
 margin: 0;
 display: flex;
 gap: 20px;
@@ -166,6 +194,23 @@ footer a:hover{
     text-decoration: underline;
 }
 
+/* Improve link styling */
+a {
+    color: #f5f0e6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4F6B4B;
+    text-decoration: underline;
+}
+
+/* Focus states for accessibility */
+a:focus {
+    outline: 2px solid #4F6B4B;
+    outline-offset: 2px;
+}
 
 
 /*Set the breakpoint to establish desktop settings */
