@@ -1,72 +1,101 @@
-/* Mobile first: These styles apply to all screen sizes */
-/* Start with mobile styles as the default */
-
 /* Mobile First Styles (Base Styles) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-boxfle;
-}
-
-p, body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    font-size: 1em;
-    margin: 0;
-    background-color: #f5f5f5;
-    padding: 10px;
-}
-
-p2, body {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-font-size: 1em;}
+/* ... (your existing code before nav) ... */
 
 header {
     background-color: #5c4a3a;
     color: #f5f0e6;
-    padding: 15px; /* Less padding on mobile */
-    height: 5em;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    padding: 1em; /* Less padding on mobile */
+    height: 8em;
+    margin-bottom: 1em;
+    border-radius: 1em;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center items */
     font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1em;
-    
-}
-
-
+    }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0; 
     display: flex;
     flex-direction: column; /* Stack vertically on mobile */
-    gap: 8px;
+    width: 100%; /* Taking full width of the header */
+    text-align: center; /* Centers the text within the list items */
+    gap: .1em; /* Space between list */
+    flex-wrap: wrap; 
+
 }
 
 nav li {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1em;
-    line-height: 1em;
+    /* font-family and font-size inherited from body */
+    line-height: 1em; /*Edits space between links*/
+    white-space: nowrap; 
+    white-space: nowrap;
 }
 
-nav a:link{
+nav a:link {
     color: #f5f0e6;
+    padding: 0.1em 1em; /* Adjust padding here - slightly less vertical, more horizontal */
     text-decoration: none;
+    display: block; /* Make the entire link area clickable */
 }
-nav a:hover{
+nav a:hover {
     color: #4F6B4B;
     text-decoration: underline;
 }
-nav a:visited{
+nav a:visited {
     color: #f5f0e6;
     text-decoration: none;
+}
+
+
+/* Focus states for accessibility */
+a:focus {
+    outline: 2px solid #4F6B4B;
+    outline-offset: 2px;
+}
+
+nav a:link {
+    padding: .1em;
+    text-decoration: underline;
+    
 }
 
 main {
     padding: 20px; /* Less padding on mobile */
 }
+h1 {
+    color: #f5f0e6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+h2 {
+    color: #5c4a3a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-size: 1.8em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #5c4a3a;
+    padding-bottom: 0.5rem;
+}
+
+h3{
+    color: #5c4a3a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: none;
+    font-size: 1.2em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+p{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+font-size: 1em;
+line-height: 1.em;}
 
 img {
     width: 100%; /* Responsive by default */
@@ -74,21 +103,42 @@ img {
     margin: 15px 0;
 }
 
+/* Image styling for analysis screenshots */
+.analysis-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem 0;
+    border: 2px solid #4F6B4B;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: center;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+/* Image captions */
+.image-caption {
+    font-style: italic;
+    color: #4F6B4B;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+}
+
 .hero {
-    background-color: #d1bba2;
+    /* Removed background-color as image will cover */
     background-image: 
-            /* Linear gradient overlay */
+        /* Linear gradient overlay */
         linear-gradient(
-            to right,                    /* Direction: left to right */
-            transparent 0%,              /* Start: fully transparent */
-            transparent 30%,             /* Stay transparent until 30% */
-            rgba(0, 0, 0, 0.5) 60%,     /* Begin darkening at 60% */
-            rgba(0, 0, 0, 0.9) 100%     /* End: 90% opacity black */
+            to right,                     /* Direction: left to right */
+            transparent 0%,               /* Start: fully transparent */
+            transparent 30%,              /* Stay transparent until 30% */
+            rgba(0, 0, 0, 0.5) 60%,       /* Begin darkening at 60% */
+            rgba(0, 0, 0, 0.9) 100%       /* End: 90% opacity black */
         ),
         /* Background image (rendered behind gradient) */
-       /* Background image path - relative to CSS file */
-    url(images/cortezvsaztec.jpg);
-    background:linear-gradient(none);
+        url(images/cortezvsaztec.jpg); /* Check this path */
+    /* background:linear-gradient(none); REMOVED - it cancelled the gradient above */
     height: 10em;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -97,51 +147,46 @@ img {
     justify-content: center;
     color: #f5f0e6;
     font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1em;
-     /* Scale image to cover entire container, may crop */
-    background-size: cover;
-    /* Center the background image */
-    background-position: center;
-    /* Don't repeat the background image */
-    background-repeat: no-repeat;
-    /* Push content to the right side */
-    justify-content: flex-end;
-    /* Allow absolute positioning of child elements */
-    position: relative;
+    background-size: cover; 
+    background-position: center; /* This is for background image */
+    background-repeat: no-repeat; 
+    justify-content: flex-end; /* Push content to the right side */
+    position: relative; 
 }
 
 .cards-container {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    margin-bottom: 1em;
 }
 
 .card-button {
-  background-color: #f5f0e6;
-  height: 200px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #5c4a3a;
-  font-weight: bold;width: 100%; /* Adjust as needed */
-  border: none;
-  background-size: cover; /* Cover the entire button area */
-  background-position: center; /* Center the image */
-  font-size: 1.2em;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.2s ease-in-out; /* For push effect */
+    background-color: #f5f0e6; /* This will be behind the background-image */
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5c4a3a; /* Text color for the button */
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    background-size: cover; /* Cover the entire button area */
+    background-position: center; /* Center the image */
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s ease-in-out; /* For push effect */
+    /* I'll need to apply background-image individually*/
 }
 
 .card-button:hover {
-  transform: scale(1.05); /* Slight enlargement on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
 }
 
 .card-button:active {
-  transform: scale(0.95); /* Push effect on click */
+    transform: scale(0.95); /* Push effect on click */
 }
 
 .card {
@@ -155,118 +200,93 @@ img {
     font-weight: bold;
 }
 
-footer{
+footer {
     width: 100%;
     background-color: #5c4a3a;
-    color: #f5f0e6;
-    height: 10vh;
+    color: #f5f0e6; 
+    height: 2em;
     display: flex;
     align-items: center;
-    padding-left: 10%;
+    padding-left: 10%; 
     box-sizing: border-box;
     padding: 4px; /* Less padding on mobile */
-    height: 2em;
     margin-bottom: 1px;
     border-radius: 5px;
-
 }
-footer ul {
-list-style-type: none;
-padding: 20px;
-margin: 0;
-display: flex;
-gap: 20px;
 
+footer ul {
+    list-style-type: none;
+    padding: 20px; /* Padding inside the footer's ul */
+    margin: 0;
+    display: flex;
+    gap: 20px;
 }
 
 footer li {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2em;
     line-height: 1.5em;
 }
 
-footer a:link{
-    color: #f5f0e6;
-    text-decoration: none;
+footer a:link,
+footer a:visited { 
+    color: #f5f0e6; 
+    text-decoration: none; 
 }
-footer a:hover{
+
+footer a:hover {
     color: #4F6B4B;
     text-decoration: underline;
 }
 
-/* Improve link styling */
-a {
-    color: #f5f0e6;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+/* Media Queries for Responsive Design */
 
-a:hover {
-    color: #4F6B4B;
-    text-decoration: underline;
-}
-
-/* Focus states for accessibility */
-a:focus {
-    outline: 2px solid #4F6B4B;
-    outline-offset: 2px;
-}
-
-
-/*Set the breakpoint to establish desktop settings */
-
+/* Tablet and Desktop styles (768px and up) */
 @media (min-width: 768px) {
-  .features {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    /* Consolidate all 768px+ styles here */
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-  .gallery {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
-/* Tablet styles (768px and up) */
-@media (min-width: 768px) {
     header {
-        padding: 20px;
+        padding: .5em; /* Adjust padding for larger screens */
     }
     
+
     h1 {
-        font-size: 30px;
+        font-size: 2em;
     }
     
     nav ul {
         flex-direction: row; /* Horizontal navigation */
-        gap: 25px;
+        gap: .3em;
     }
     
     main {
-        padding: 30px;
+        padding: 2.5em; /* Adjust padding for larger screens */
+    }
+
+    .cards-container {
+        flex-direction: row; /* Arrange cards horizontally */
+        gap: 1em;
+    }
+    
+    .card {
+        flex: 1; /* Distribute space equally among cards */
     }
 }
 
 /* Desktop styles (1024px and up) */
 @media (min-width: 1024px) {
     h1 {
-        font-size: 36px;
+        font-size: 2em; /* Larger h1 for desktop */
     }
     
     main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px;
-    }
-}
-
-
-/* Desktop Styles - Only override what changes */
-@media (min-width: 768px) {
-    .cards-container {
-        flex-direction: row;
-        gap: 20px;
-    }
-    
-    .card {
-        flex: 1;
+        max-width: 1200px; /* Constrain content width */
+        margin: 0 auto; /* Center main content */
+        padding: 5em; /* More padding for desktop */
     }
 }

@@ -3,17 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout</title>
+    <title>Fighting Back: Resist</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">Navigation</header>
-    <main class="hero">Banner Image & Text</main>
-    <section class="cards-container">
-        <div class="card">Colonial Society</div>
-        <div class="card">Urban Development</div>
-        <div class="card">Society</div>
-        <div class="card">Economic Structure</div>
-    </section>
+    <!-- Header section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#index.html">Home</a></li>
+                <li><a href="#colonialgovt.html">Colonial Government</a></li>
+                <li><a href="#urbandevelopment.html">Urban Devalopment</a></li>
+                <li><a href="#economicstructure.html">Economic Structure</a></li>
+                <li><a href="#conclusion.html">Conclusion</a></li>
+                <li><a href="#methodology.html">Methodology</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+<main>
+
+<img class="analysis-image" src="images/society.jpg" Width="100%" alt="A picture representing colonial society.">
+<div class="image-caption">A picture representing colonial society.</div>
+    
+</main>
+        <h2>Society</h2>
+        <p>Colonial society was a blend of colonial settlers, Native Americans, and enslaved African populations, leading to many adjustments in societal hierarchies. Native languages sometimes became the predominant spoken language in a community, especially in areas with large Indigenous populations. Furthermore, Native farming and cuisine shaped community diets and marketplaces. Imagine what modern diets would be like without corn or tomatoes, both of which are products of Native American farming.</p>
+        </section>
+    </main>
+    
+<section class="cards-container">
+   <a href="colonialgovt.html" class="card-link">
+        <button class="card-button" style="background-image: url('images/colonialgovernment.jpg');">Colonial Government</button>
+    </a>
+    <a href="urban_development.html" class="card-link">
+        <button class="card-button" style="background-image: url('images/urbandevelopment.jpg');">Urban Development</button>
+    </a>
+    <a href="society.html" class="card-link">
+        <button class="card-button" style="background-image: url('images/society.jpg');">Society</button>
+    </a>
+    <a href="economicstructure.html" class="card-link">
+        <button class="card-button" style="background-image: url('images/economy.jpg');">Economic Structure</button>
+    </a>
+    <a href="conclusion.html" class="card-link">
+        <button class="card-button" style="background-image: url('images/conclusion.jpg');">Conclusion</button>
+    </a>
+</section>
+
+<footer><p2>Contact Me: <a href="mailto:sean.taylor@tcu.edu">Sean.Taylor@tcu.edu</a></p2></footer>
 </body>
 </html>
