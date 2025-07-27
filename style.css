@@ -1,10 +1,18 @@
 /* Mobile first: These styles apply to all screen sizes */
 /* Start with mobile styles as the default */
 
-body {
-    font-family: Arial, sans-serif;
+/* Mobile First Styles (Base Styles) */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-boxfle;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    padding: 20px;
     background-color: #f5f5f5;
 }
 
@@ -12,9 +20,19 @@ header {
     background-color: #5c4a3a;
     color: #f5f0e6;
     padding: 15px; /* Less padding on mobile */
+    height: 5em;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px; /* Mobile size as default */
     margin: 0 0 15px 0;
 }
@@ -24,7 +42,26 @@ nav ul {
     padding: 0;
     display: flex;
     flex-direction: column; /* Stack vertically on mobile */
-    gap: 15px;
+    gap: 8px;
+}
+
+nav li {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+nav a:link{
+    color: #f5f0e6;
+    text-decoration: none;
+}
+nav a:hover{
+    color: #4F6B4B;
+    text-decoration: underline;
+}
+nav a:visited{
+    color: #f5f0e6;
+    text-decoration: none;
 }
 
 main {
@@ -35,6 +72,112 @@ img {
     width: 100%; /* Responsive by default */
     height: auto;
     margin: 15px 0;
+}
+
+.hero {
+    background-color: #d1bba2;
+    background-image: 
+            /* Linear gradient overlay */
+        linear-gradient(
+            to right,                    /* Direction: left to right */
+            transparent 0%,              /* Start: fully transparent */
+            transparent 30%,             /* Stay transparent until 30% */
+            rgba(0, 0, 0, 0.5) 60%,     /* Begin darkening at 60% */
+            rgba(0, 0, 0, 0.9) 100%     /* End: 90% opacity black */
+        ),
+        /* Background image (rendered behind gradient) */
+       /* Background image path - relative to CSS file */
+    url(images/cortezvsaztec.jpg);
+    background:linear-gradient(none);
+    height: 10em;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f0e6;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     /* Scale image to cover entire container, may crop */
+    background-size: cover;
+    /* Center the background image */
+    background-position: center;
+    /* Don't repeat the background image */
+    background-repeat: no-repeat;
+    /* Push content to the right side */
+    justify-content: flex-end;
+    /* Allow absolute positioning of child elements */
+    position: relative;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.card {
+    background-color: #f5f0e6;
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5c4a3a;
+    font-weight: bold;
+}
+
+footer{
+    width: 100%;
+    background-color: #5c4a3a;
+    color: #f5f0e6;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    box-sizing: border-box;
+    padding: 4px; /* Less padding on mobile */
+    height: 2em;
+    margin-bottom: 1px;
+    border-radius: 5px;
+
+}
+footer ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+gap: 20px;
+
+}
+
+footer li {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+footer a:link{
+    color: #f5f0e6;
+    text-decoration: none;
+}
+footer a:hover{
+    color: #4F6B4B;
+    text-decoration: underline;
+}
+
+
+
+/*Set the breakpoint to establish desktop settings */
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Tablet styles (768px and up) */
@@ -67,5 +210,18 @@ img {
         max-width: 1200px;
         margin: 0 auto;
         padding: 40px;
+    }
+}
+
+
+/* Desktop Styles - Only override what changes */
+@media (min-width: 768px) {
+    .cards-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .card {
+        flex: 1;
     }
 }
