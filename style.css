@@ -7,57 +7,59 @@
 
 body {
     font-family: Arial, sans-serif;
+    color: #333; /* Default body text color for better contrast */
 }
 
 /* Make all images responsive by default */
 img {
     max-width: 100%;
     height: auto;
+    margin: 15px 0;
 }
 
 /* Content image sizing system */
 .content-image-small {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin: 30px auto;
-  display: block;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    display: block;
 }
 
 .content-image-medium {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin: 30px auto;
-  display: block;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    display: block;
 }
 
 .content-image-large {
-  max-width: 700px;
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin: 30px auto;
-  display: block;
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    display: block;
 }
 
 /* Semantic figure styling */
 figure {
-  margin: 30px 0;
-  text-align: center;
+    margin: 30px 0;
+    text-align: center;
 }
 
 figcaption {
-  font-size: 0.9em;
-  color: #666;
-  font-style: italic;
-  margin-top: 10px;
-  line-height: 1.4;
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+    line-height: 1.4;
 }
 
 /* Main navigation container */
@@ -68,14 +70,14 @@ figcaption {
     padding: 1rem;
     background-color: #5c4a3a;
     position: relative;
+    margin-bottom: 20px; 
 }
 
 /* Logo styles */
 .logo h1 {
-    color: white;
+    color: #f5f0e6; /* Ensure logo text is visible on dark nav */
     font-size: 1.5rem;
 }
-
 
 /* Hide the checkbox (we'll use it for clicking) */
 .menu-toggle {
@@ -88,32 +90,61 @@ figcaption {
     flex-direction: column;
     cursor: pointer;
     padding: 0.5rem;
+    /* Hide hamburger menu button on larger screens */
+    @media (min-width: 768px) {
+        display: none;
+    }
 }
 
 .menu-button span {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #f5f0e6;
     margin: 3px 0;
     transition: 0.3s;
 }
 
 /* Mobile menu - starts hidden */
 .nav-menu {
+    list-style: none; 
+    padding: 0;      
+    margin: 0;       
+    background-color: #4F6B4B; /* Mobile menu background */
+    display: flex; 
+    flex-direction: column;
+    text-align: center;
+    gap: .1em;
+    flex-wrap: wrap;
+
+    /* Mobile specific positioning and hiding/showing */
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #4F6B4B;
-    list-style: none;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
     z-index: 100;
+
+    /* Ensure nav bar opens fully on desktop versions */
+    @media (min-width: 768px) {
+        position: static; /* Remove absolute positioning */
+        max-height: none; /* Always show content */
+        overflow: visible; /* Content can overflow if needed */
+        background-color: transparent; /* Remove background, main-nav will provide it */
+        flex-direction: row; /* Arrange horizontally */
+        justify-content: flex-end; /* Align links to the right */
+        width: auto; /* Take natural width */
+        flex-grow: 1; /* Allow menu to grow and push logo to left */
+    }
 }
 
 .nav-menu li {
     width: 100%;
+    /* Adjust li width for desktop nav */
+    @media (min-width: 768px) {
+        width: auto; /* Allow list items to take natural width */
+    }
 }
 
 .nav-menu a {
@@ -122,10 +153,22 @@ figcaption {
     color: white;
     text-decoration: none;
     border-bottom: 1px solid #555;
+    /* Adjust desktop nav link styling */
+    @media (min-width: 768px) {
+        border-bottom: none;
+        padding: 0.5rem 1rem; /* Adjust padding for horizontal links */
+        color: #f5f0e6; /* Ensure consistent text color */
+    }
 }
 
 .nav-menu a:hover {
     background-color: #555;
+    /* Adjust hover background for desktop nav links */
+    @media (min-width: 768px) {
+        background-color: transparent; /* No background change on hover */
+        text-decoration: underline; /* Add underline on hover */
+        color: #4F6B4B; /* Change color on hover for desktop nav */
+    }
 }
 
 /* Show menu when checkbox is checked */
@@ -133,69 +176,8 @@ figcaption {
     max-height: 300px;
 }
 
-
-
-
-/* Mobile First Styles (Base Styles) */
-/* ... (your existing code before nav) ... */
-
-header {
-    background-color: #5c4a3a;
-    color: #f5f0e6;
-    padding: 1em; /* Less padding on mobile */
-    height: 8em;
-    margin-bottom: 1em;
-    border-radius: 1em;
-    display: flex;
-    align-items: center; /* Vertically center items */
-    justify-content: center; /* Horizontally center items */
-    font-weight: bold;
-    }
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0; 
-    display: flex;
-    flex-direction: column; /* Stack vertically on mobile */
-    width: 100%; /* Taking full width of the header */
-    text-align: center; /* Centers the text within the list items */
-    gap: .1em; /* Space between list */
-    flex-wrap: wrap; 
-
-}
-
-nav li {
-    /* font-family and font-size inherited from body */
-    line-height: 1em; /*Edits space between links*/
-    white-space: nowrap; 
-}
-
-nav a:link {
-    color: #f5f0e6;
-    padding: 0.1em 1em; /* Adjust padding here - slightly less vertical, more horizontal */
-    text-decoration: none;
-    display: block; /* Make the entire link area clickable */
-}
-nav a:hover {
-    color: #4F6B4B;
-    text-decoration: underline;
-}
-nav a:visited {
-    color: #f5f0e6;
-    text-decoration: none;
-}
-
-
-/* Focus states for accessibility */
-a:focus {
-    outline: 2px solid #4F6B4B;
-    outline-offset: 2px;
-}
-
-
 main {
-    padding: .5rem; /* Less padding on mobile */
+    padding: .5rem;
 }
 h1 {
     color: #f5f0e6;
@@ -217,30 +199,30 @@ h2 {
 h3{
     color:#5c4a3a;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: none;
+    font-style: normal;
     font-size: 1.2em;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
 }
 
-p{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-font-size: 1em;
-line-height: 1em;}
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+    color: #444; /* Slightly darker text color for better readability on light backgrounds */
+}
 
 /* Image styling for analysis screenshots */
 .analysis-image {
     width: 100%;
     max-width: 100%;
-    margin: 1em 0;
+    margin: 1em auto;
     border: .1em solid #4F6B4B;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: block;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    
 }
 
 /* Image captions */
@@ -249,25 +231,21 @@ line-height: 1em;}
     color: #4F6B4B;
     text-align: center;
     margin-top: 0.5rem;
-    margin-bottom: 1.5em;
     font-size: 0.9em;
     padding: 0;
+    margin-bottom: 1.5em;
 }
 
 .hero {
-    /* Removed background-color as image will cover */
     background-image: 
-        /* Linear gradient overlay */
         linear-gradient(
-            to right,                     /* Direction: left to right */
-            transparent 0%,               /* Start: fully transparent */
-            transparent 30%,              /* Stay transparent until 30% */
-            rgba(0, 0, 0, 0.5) 60%,       /* Begin darkening at 60% */
-            rgba(0, 0, 0, 0.9) 100%       /* End: 90% opacity black */
+            to right,
+            transparent 0%,
+            transparent 30%,
+            rgba(0, 0, 0, 0.5) 60%,
+            rgba(0, 0, 0, 0.9) 100%
         ),
-        /* Background image (rendered behind gradient) */
-        url(images/cortezvsaztec.jpg); /* Check this path */
-    /* background:linear-gradient(none); REMOVED - it cancelled the gradient above */
+        url(images/cortezvsaztec.jpg); /* Corrected hero image path */
     height: 10em;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -277,78 +255,92 @@ line-height: 1em;}
     color: #f5f0e6;
     font-weight: bold;
     background-size: cover; 
-    background-position: center; /* This is for background image */
+    background-position: center;
     background-repeat: no-repeat; 
-    justify-content: flex-end; /* Push content to the right side */
+    justify-content: flex-end;
     position: relative; 
 }
 
 .cards-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 1em;
     margin-bottom: 1em;
     margin-top: 2em;
+
+    /* Mobile: Single column */
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    width: 100%;
+}
+
+.card-link:visited {
+    color: inherit;
+    text-decoration: none;
 }
 
 .card-button {
-    background-color: #f5f0e6; /* This will be behind the background-image */
+    background-color: #5c4a3a;
     height: 200px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f5f0e6; /* Text color for the button */
+    color: #f5f0e6; /* Card button text color set to a dark color for contrast on light background */
     font-style: normal;
     font-weight: bold;
     width: 100%;
     border: none;
-    background-size: cover; /* Cover the entire button area */
-    background-position: center; /* Center the image */
+    background-size: cover;
+    background-position: center;
     font-size: 1.2em;
     cursor: pointer;
     text-align: center;
-    transition: transform 0.2s ease-in-out; /* For push effect */
-    text-decoration: none; 
-
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 .card-button:hover {
-    transform: scale(1.05); /* Slight enlargement on hover */
+    transform: scale(1.05);
 }
 
 .card-button:active {
-    transform: scale(0.95); /* Push effect on click */
+    transform: scale(0.95);
 }
 
-.card {
-    background-color: #f5f0e6;
+.card { 
+    background-color: #5c4a3a;
     height: 80px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #5c4a3a;
-    font-weight: bold;
+    color: #f5f0e6
+    
 }
 
 footer {
     width: 100%;
     background-color: #5c4a3a;
     color: #f5f0e6; 
-    height: 2em;
+    min-height: 4em; 
+    padding: 0.5em 10%; 
     display: flex;
-    align-items: center;
-    padding-left: 10%; 
+    align-items: center; 
     box-sizing: border-box;
-    padding: 4px; /* Less padding on mobile */
+    margin-top: 2em;
     margin-bottom: 1px;
     border-radius: 5px;
 }
 
 footer ul {
     list-style-type: none;
-    padding: 20px; /* Padding inside the footer's ul */
+    padding: 20px;
     margin: 0;
     display: flex;
     gap: 20px;
@@ -373,7 +365,6 @@ footer a:hover {
 
 /* Tablet and Desktop styles (768px and up) */
 @media (min-width: 768px) {
-    /* Consolidate all 768px+ styles here */
     .features {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -381,59 +372,45 @@ footer a:hover {
     .gallery {
         grid-template-columns: repeat(4, 1fr);
     }
-
-    header {
-        padding: .5em; /* Adjust padding for larger screens */
-    }
     
-
     h1 {
         font-size: 2em;
     }
     
-    nav ul {
-        flex-direction: row; /* Horizontal navigation */
-        gap: .3em;
-    }
-    
     main {
-        padding: 1.em; /* Adjust padding for larger screens */
+        padding: 1em;
     }
 
     .cards-container {
-        flex-direction: row; /* Arrange cards horizontally */
-        gap: 1em;
+        /* Tablet: Three columns for 6 cards = 2 rows of 3 */
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: stretch;
     }
     
     .card {
-        flex: 1; /* Distribute space equally among cards */
+        flex: 1;
     }
 }
 
-    .card-link {
-        flex: 1; /* Distributes space equally among cards */
-        text-decoration: none;
-        display: flex;
-        color: #f5f0e6;
-        min-width: 200px; /* Optional: Set a minimum width for cards to prevent them from becoming too small on wider screens, adjust as needed */
-        /* If you have many cards, consider adding max-width or using flex-basis */
-    }
+.card-link {
+    min-width: 200px;
+}
 
-    .card-link:visited {
-        color: #f5f0e6;
-    }
 
 /* Desktop styles (1024px and up) */
 @media (min-width: 1024px) {
     h1 {
-        font-size: 2em; /* Larger h1 for desktop */
+        font-size: 2.5em;
     }
-
     
     main {
-        max-width: 1200px; /* Constrain content width */
-        margin: 0 auto; /* Center main content */
-        padding: 2.5em; /* More padding for desktop */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2.5em;
+    }
+
+    .cards-container {
+        /* Desktop: Three columns for 6 cards = 2 rows of 3 */
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
-
