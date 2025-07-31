@@ -6,15 +6,22 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #333; /* Default body text color for better contrast */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #333; 
+    background-color: #f5f0e6;
 }
+
+/* Comfortable paragraph spacing */
+p + p {
+    margin-top: 1em;
+}
+
 
 /* Make all images responsive by default */
 img {
     max-width: 100%;
     height: auto;
-    margin: 15px 0;
+    margin: 1rem 0;
 }
 
 /* Content image sizing system */
@@ -70,15 +77,20 @@ figcaption {
     padding: 1rem;
     background-color: #5c4a3a;
     position: relative;
-    margin-bottom: 20px; 
+    margin-bottom: .1rem; 
 }
 
-/* Logo styles */
-.logo h1 {
-    color: #f5f0e6; /* Ensure logo text is visible on dark nav */
-    font-size: 1.5rem;
+
+/* Fluid typography - scales automatically */
+.hero h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 0.5em;
 }
 
+.hero p {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    margin-bottom: 0;
+}
 /* Hide the checkbox (we'll use it for clicking) */
 .menu-toggle {
     display: none;
@@ -178,7 +190,12 @@ figcaption {
 
 main {
     padding: .5rem;
+    /* Better reading experience */
+    max-width: 65ch; /* Optimal line length */
+    margin-left: auto;
+    margin-right: auto;
 }
+
 h1 {
     color: #f5f0e6;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -206,21 +223,24 @@ h3{
     padding-bottom: 0.5rem;
 }
 
+/* Body text enhancement */
 p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1em;
-    line-height: 1.5em;
     margin-bottom: 1.5em;
     color: #444; 
 }
+
 
 /* Image styling for analysis screenshots */
 .analysis-image {
     width: 100%;
     max-width: 100%;
+    height: auto;
     margin: 1em auto;
     border: .1em solid #4F6B4B;
-    border-radius: 8px;
+    border-radius: .5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: block;
 }
@@ -366,22 +386,13 @@ footer a:hover {
 }
 
 
-p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1em;
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-    color: #444; /* This applies to ALL paragraphs by default */
-}
-
 
 footer {
-    /* ... other footer styles ... */
-    color: #FFFFFF; /* This is the general text color for the footer */
+    color: #FFFFFF; 
 }
 
 
-/* In your style.css, place this near your footer styles or general typography */
+
 footer p {
     color: #f5f0e6 ;
     font-size: 0.9em; 
