@@ -16,7 +16,6 @@ p + p {
     margin-top: 1em;
 }
 
-
 /* Make all images responsive by default */
 img {
     max-width: 100%;
@@ -30,8 +29,8 @@ img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin: 30px auto;
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.15);
+    margin: 2em auto;
     display: block;
 }
 
@@ -40,8 +39,8 @@ img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin: 30px auto;
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.15);
+    margin: 2em auto;
     display: block;
 }
 
@@ -50,22 +49,22 @@ img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin: 30px auto;
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.15);
+    margin: 2em auto;
     display: block;
 }
 
 /* Semantic figure styling */
 figure {
-    margin: 30px 0;
+    margin: 2em 0;
     text-align: center;
 }
 
 figcaption {
-    font-size: 0.9em;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     color: #666;
     font-style: italic;
-    margin-top: 10px;
+    margin-top: 0.7em;
     line-height: 1.4;
 }
 
@@ -79,7 +78,6 @@ figcaption {
     position: relative;
     margin-bottom: .1rem; 
 }
-
 
 /* Fluid typography - scales automatically */
 .hero h1 {
@@ -102,10 +100,6 @@ figcaption {
     flex-direction: column;
     cursor: pointer;
     padding: 0.5rem;
-    /* Hide hamburger menu button on larger screens */
-    @media (min-width: 768px) {
-        display: none;
-    }
 }
 
 .menu-button span {
@@ -127,8 +121,6 @@ figcaption {
     text-align: center;
     gap: .1em;
     flex-wrap: wrap;
-
-    /* Mobile specific positioning and hiding/showing */
     position: absolute;
     top: 100%;
     left: 0;
@@ -137,26 +129,10 @@ figcaption {
     overflow: hidden;
     transition: max-height 0.3s ease;
     z-index: 100;
-
-    /* Ensure nav bar opens fully on desktop versions */
-    @media (min-width: 768px) {
-        position: static; /* Remove absolute positioning */
-        max-height: none; /* Always show content */
-        overflow: visible; /* Content can overflow if needed */
-        background-color: transparent; /* Remove background, main-nav will provide it */
-        flex-direction: row; /* Arrange horizontally */
-        justify-content: flex-end; /* Align links to the right */
-        width: auto; /* Take natural width */
-        flex-grow: 1; /* Allow menu to grow and push logo to left */
-    }
 }
 
 .nav-menu li {
     width: 100%;
-    /* Adjust li width for desktop nav */
-    @media (min-width: 768px) {
-        width: auto; /* Allow list items to take natural width */
-    }
 }
 
 .nav-menu a {
@@ -165,22 +141,11 @@ figcaption {
     color: white;
     text-decoration: none;
     border-bottom: 1px solid #555;
-    /* Adjust desktop nav link styling */
-    @media (min-width: 768px) {
-        border-bottom: none;
-        padding: 0.5rem 1rem; /* Adjust padding for horizontal links */
-        color: #f5f0e6; /* Ensure consistent text color */
-    }
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .nav-menu a:hover {
     background-color: #555;
-    /* Adjust hover background for desktop nav links */
-    @media (min-width: 768px) {
-        background-color: transparent; /* No background change on hover */
-        text-decoration: underline; /* Add underline on hover */
-        color: #4F6B4B; /* Change color on hover for desktop nav */
-    }
 }
 
 /* Show menu when checkbox is checked */
@@ -190,8 +155,7 @@ figcaption {
 
 main {
     padding: .5rem;
-    /* Better reading experience */
-    max-width: 65ch; /* Optimal line length */
+    max-width: 65ch;
     margin-left: auto;
     margin-right: auto;
 }
@@ -206,9 +170,10 @@ h2 {
     color: #5c4a3a;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
-    font-size: 1.8em;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 0.5em;
     margin-top: 2rem;
-    margin-bottom: 1rem;
     border-bottom: 2px solid #5c4a3a;
     padding-bottom: 0.5rem;
 }
@@ -217,9 +182,10 @@ h3{
     color:#5c4a3a;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: normal;
-    font-size: 1.2em;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    line-height: 1.3;
+    margin-bottom: 0.5em;
     margin-top: 1rem;
-    margin-bottom: 1rem;
     padding-bottom: 0.5rem;
 }
 
@@ -232,15 +198,14 @@ p {
     color: #444; 
 }
 
-
 /* Image styling for analysis screenshots */
 .analysis-image {
     width: 100%;
     max-width: 100%;
     height: auto;
     margin: 1em auto;
-    border: .1em solid #4F6B4B;
-    border-radius: .5rem;
+    border: 0.1em solid #4F6B4B;
+    border-radius: 0.5em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: block;
 }
@@ -251,7 +216,7 @@ p {
     color: #4F6B4B;
     text-align: center;
     margin-top: 0.5rem;
-    font-size: 0.9em;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     padding: 0;
     margin-bottom: 1.5em;
 }
@@ -265,11 +230,11 @@ p {
             rgba(0, 0, 0, 0.5) 60%,
             rgba(0, 0, 0, 0.9) 100%
         ),
-        url(images/cortezvsaztec.jpg); /* Corrected hero image path */
+        url(images/cortezvsaztec.jpg);
     height: 10em;
-    margin-bottom: .5rem;
-    margin-top: .1rem;
-    border-radius: .5rem;
+    margin-bottom: 0.5em;
+    margin-top: 0.1em;
+    border-radius: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,6 +245,7 @@ p {
     background-repeat: no-repeat; 
     justify-content: flex-end;
     position: relative; 
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
     text-shadow: 1px 1px 0px #000, 2px 2px 5px rgba(0,0,0,0.5);
 }
 
@@ -288,32 +254,27 @@ p {
     gap: 1em;
     margin-bottom: 1em;
     margin-top: 2em;
-
-    /* Mobile: Single column */
     grid-template-columns: 1fr;
     justify-items: center;
 }
 
-.card-link {
+.card-link,
+.card-link:visited {
     text-decoration: none;
     color: inherit;
     display: flex;
     width: 100%;
-}
-
-.card-link:visited {
-    color: inherit;
-    text-decoration: none;
+    min-width: 200px;
 }
 
 .card-button {
     background-color: #5c4a3a;
-    height: 200px;
-    border-radius: .5rem;
+    height: 15rem;
+    border-radius: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f5f0e6; /* Card button text color set to a dark color for contrast on light background */
+    color: #f5f0e6; 
     font-style: normal;
     font-weight: bold;
     width: 100%;
@@ -338,35 +299,34 @@ p {
 
 .card { 
     background-color: #5c4a3a;
-    height: 80px;
-    border-radius: 5px;
+    height: 5em;
+    border-radius: 0.3em;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #f5f0e6
-    
 }
 
 footer {
     width: 100%;
     background-color: #5c4a3a;
-    color: #f5f0e6; 
+    color: #f5f0e6;
     min-height: 4em; 
     padding: 0.5em 10%; 
     display: flex;
     align-items: center; 
     box-sizing: border-box;
     margin-top: 2em;
-    margin-bottom: 1px;
+    margin-bottom: 0.1em;
     border-radius: 5px;
 }
 
 footer ul {
     list-style-type: none;
-    padding: 20px;
+    padding: 1.5em;
     margin: 0;
     display: flex;
-    gap: 20px;
+    gap: 1.5em;
     color: #f5f0e6;
 }
 
@@ -385,26 +345,20 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
-
-footer {
-    color: #FFFFFF; 
-}
-
-
-
 footer p {
     color: #f5f0e6 ;
     font-size: 0.9em; 
     margin-bottom: 0.5em; 
 }
 
-/* Media Queries for Responsive Design */
+/* --- GROUPED MEDIA QUERIES --- */
 
 /* Tablet and Desktop styles (768px and up) */
 @media (min-width: 768px) {
     .features {
         grid-template-columns: repeat(3, 1fr);
+        padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+        margin: clamp(2rem, 5vw, 4rem) auto;
     }
 
     .gallery {
@@ -420,7 +374,6 @@ footer p {
     }
 
     .cards-container {
-        /* Tablet: Three columns for 6 cards = 2 rows of 3 */
         grid-template-columns: repeat(3, 1fr);
         justify-items: stretch;
     }
@@ -428,12 +381,40 @@ footer p {
     .card {
         flex: 1;
     }
-}
 
-.card-link {
-    min-width: 200px;
-}
+    /* Hide hamburger menu button on larger screens */
+    .menu-button {
+        display: none;
+    }
 
+    /* Desktop nav menu styles */
+    .nav-menu {
+        position: static;
+        max-height: none;
+        overflow: visible;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
+        flex-grow: 1;
+    }
+
+    .nav-menu li {
+        width: auto;
+    }
+
+    .nav-menu a {
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+        color: #f5f0e6; 
+    }
+
+    .nav-menu a:hover {
+        background-color: transparent;
+        text-decoration: underline;
+        color: #4F6B4B;
+    }
+}
 
 /* Desktop styles (1024px and up) */
 @media (min-width: 1024px) {
@@ -448,7 +429,6 @@ footer p {
     }
 
     .cards-container {
-        /* Desktop: Three columns for 6 cards = 2 rows of 3 */
         grid-template-columns: repeat(3, 1fr); 
     }
 }
