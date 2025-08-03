@@ -127,8 +127,15 @@ figcaption {
 .hero h1 {
     font-size: clamp(1.5rem, 5vw, 3rem);
     margin-bottom: 0.5em;
+    position: sticky;
 }
 
+.hero h2 {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    margin-bottom: 0.5em;
+    font-weight: normal;
+    position: sticky;
+}
 .hero p {
     font-size: clamp(1.2rem, 3vw, 2rem);
     margin-bottom: 0;
@@ -198,7 +205,7 @@ background-position: center;
 }
 
 .about-card {
-background-image: url('images/religion.jpg');
+background-image: url('images/Family\ in\ Nice.JPG');
 background-size: cover;
 background-position: center;
 }
@@ -314,19 +321,35 @@ p {
     margin-top: 0.1em;
     border-radius: 0.5em;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
+    text-align: right;
     color: #f5f0e6;
     font-weight: bold;
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat; 
-    justify-content: flex-end;
     position: relative; 
     padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
     text-shadow: 1px 1px 0px #000, 2px 2px 5px rgba(0,0,0,0.5);
 }
 
+.hero h1, .hero p {
+    max-width: 50%; /* This is the key to preventing the text from overflowing */
+    margin-left: auto;
+}
+
+.hero h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    margin-bottom: 0;
+    color: #f5f0e6;
+}
 .cards-container {
     display: grid;
     gap: 1em;
