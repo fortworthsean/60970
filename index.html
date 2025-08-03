@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Sean Taylor | Portfolio Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav class="main-nav" aria-label="Main Navigation">
-        <div class="logo">
-        </div>
+        <a href="index.html" class="logo">
+            <span>Sean Taylor</span>
+        </a>
+        
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="menu-button">
             <span></span>
@@ -19,45 +21,32 @@
         </label>
         
         <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="colonialgovt.html">Colonial Government</a></li>
-            <li><a href="urbandevelopment.html">Urban Development</a></li>
-            <li><a href="society.html">Society</a></li>
-            <li><a href="economicstructure.html">Economic Structure</a></li>
-            <li><a href="conclusion.html">Conclusion</a></li>
-            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <h1>Fighting Back: Native Resistance to Colonial Authority</h1>
-    </section>
-
     <main>
-        <h2>Introduction</h2>
-        <p>A culturally rich and diverse region today, Latin America became a cultural battleground in the late 15th century. Colonial authorities sought to control and subjugate native populations by enforcing strict controls on government, urban development, society, and economic activity. However, Native Americans were not passive. They actively chose to resist or adapt to colonial authority as it benefited them, imprinting their influence on the region’s unique cultural landscape that we see today.</p>
-
-        <section class="cards-container">
-            <a href="colonialgovt.html" class="card-link">
-                <button class="card-button" style="background-image: url('images/CortesAssault.jpg')">Colonial Government</button>
-            </a>
-            <a href="urbandevelopment.html" class="card-link">
-                <button class="card-button" style="background-image: url('images/SantoDomingo_plan.jpg')">Urban Development</button>
-            </a>
-            <a href="society.html" class="card-link">
-                <button class="card-button" style="background-image: url('images/caste.png')">Society</button>
-            </a>
-            <a href="economicstructure.html" class="card-link">
-                <button class="card-button" style="background-image: url('images/limaplaza.png')">Economic Structure</button>
-            </a>
-            <a href="conclusion.html" class="card-link">
-                <button class="card-button" style="background-image: url('images/conclusion.jpg');">Conclusion</button>
-            </a>
-            <a href="methodology.html" class="card-link">
-                <button class="card-button" style="background-image: url('images/1492.jpg')">Methodology</button>
-                </a>
+        <section class="hero">
+            <h1>Web Development Student</h1>
         </section>
 
+        <section class="featured-project">
+            <a href="research.html" class="featured-link">
+                <h2>Featured Project: Fighting Back, Native Resistance to Colonial Authority</h2>
+                <p>See how Native American agency shaped the culture of Latin America and the world, under the thumb of the crown.</p>
+            </a>
+        </section>
+        
+        <section class="cards-container">
+            <a href="research.html" class="card-button research-card">
+                <span class="card-title">See My Research</span>
+            </a>
+            <a href="about.html" class="card-button about-card">
+                <span class="card-title">About Me</span>
+            </a>
+        </section>
     </main>
 
     <footer>
